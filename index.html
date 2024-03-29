@@ -41,21 +41,53 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <form>
+                    <section class="py-5">
+                        <h2 class="fw-bold">Richiesta preventivo</h2>
+                        <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo
+                        </p>
+                    </section>
+                    <form class="">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            <label for="name" class="form-label fw-bold">Nome</label>
+                            <input type="text" class="form-control " placeholder="Inserisci nome :">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="last-name" class="form-label fw-bold">Cognome</label>
+                            <input type="text" class="form-control " placeholder="Inserisci cognome :">
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="mb-3">
+                            <label for="mail" class="form-label fw-bold">Email</label>
+                            <input type="email" class="form-control " placeholder="Inserisci email :">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <label for="mail" class="form-label fw-bold">Tipo di lavoro</label>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>Seleziona il tipo di lavoro</option>
+                            <option value="be">Backend Development</option>
+                            <option value="fe">Frontend Development</option>
+                            <option value="pa">Project Analysis</option>
+                        </select>
+                        <div class="mb-3">
+                            <textarea class="form-control my-3"  placeholder="Note :" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                        <label for="discount-code" class="form-label fw-bold">Codice promozionale (opzionale) </label>
+                        <input type="text" class="form-control " placeholder=" Inserisci codice :">
+                        </div>
+                        <div class="mb-3">
+                        <input class="form-check-input mt-0 border border-primary" type="checkbox" value="" aria-label="Checkbox"> Accetto la Privacy Policy
+                        </div>
+                        <div class="py-4 d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                                <section class="mx-5 px-5" >
+                                    <h5 class="fw-bold">Prezzo finale</h5>
+                                    <span id="price-bold" class="fw-bold">
+                                        € 200
+                                    </span>
+                                    <span id="price">
+                                        ,00
+                                    </span>
+                                </section>
+                        </div>
                     </form>
                 </div>
                 <div class="col-lg-4">
