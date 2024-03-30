@@ -44,7 +44,7 @@ function jobPricing(e) {
 
     console.log(estimatePrice);
 
-    let price = estimatePrice.split();
+    let price = estimatePrice.split('.');
     
     
     console.log(price);
@@ -56,7 +56,7 @@ function jobPricing(e) {
     
 
    priceBoldElement.innerHTML = price[0];
-   priceNormalElement.innerHTML = price[1];
+   priceNormalElement.innerHTML = (',' + price[1]);
 
 }
 
