@@ -46,21 +46,21 @@
                         <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo
                         </p>
                     </section>
-                    <form  id="form">
+                    <form  id="form" class="needs-validation">
                         <div class="mb-3">
                             <label  for="name" class="form-label fw-bold">Nome</label>
-                            <input id="name" type="text" class="form-control " placeholder="Inserisci nome :">
+                            <input id="name" type="text" class="form-control " placeholder="Inserisci nome :" required>
                         </div>
                         <div class="mb-3">
                             <label for="last-name" class="form-label fw-bold">Cognome</label>
-                            <input type="text" class="form-control " placeholder="Inserisci cognome :">
+                            <input type="text" class="form-control " placeholder="Inserisci cognome :" required>
                         </div>
                         <div class="mb-3">
                             <label for="mail" class="form-label fw-bold">Email</label>
-                            <input type="email" class="form-control " placeholder="Inserisci email :">
+                            <input type="email" class="form-control " placeholder="Inserisci email :" required>
                         </div>
                         <label for="mail" class="form-label fw-bold">Tipo di lavoro</label>
-                        <select id="job-selection" class="form-select form-select-sm" aria-label="Small select example">
+                        <select id="job-selection" class="form-select form-select-sm" aria-label="Small select example" required>
                             <option id="job-selection" selected>Seleziona il tipo di lavoro</option>
                             <option value="backend">Backend Development</option>
                             <option value="frontend">Frontend Development</option>
@@ -74,7 +74,7 @@
                         <input id="discount" type="text" class="form-control " placeholder=" Inserisci codice :">
                         </div>
                         <div class="mb-3">
-                        <input class="form-check-input mt-0 border border-primary" type="checkbox" value="" aria-label="Checkbox"> Accetto la Privacy Policy
+                        <input class="form-check-input mt-0 border border-primary" type="checkbox" value="" aria-label="Checkbox" required> Accetto la Privacy Policy
                         </div>
                         <div class="py-4 mb-3 d-flex justify-content-between">
                                 <button  type="submit" class="btn btn-primary">Calcola preventivo</button>

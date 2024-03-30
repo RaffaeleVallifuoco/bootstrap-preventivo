@@ -9,10 +9,12 @@ const priceBoldElement = document.getElementById ('price-bold');
 const priceNormalElement = document.getElementById ('price-normal');
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 const discountSale = 0.25;
+const forms = document.querySelectorAll('.needs-validation');
 formElement.addEventListener('submit', jobPricing);
 
 function jobPricing(e) {
     e.preventDefault()
+
     const jobSelectionElement = document.getElementById('job-selection');
     const discountElement = document.getElementById('discount');
     let discount = discountElement.value;
@@ -31,12 +33,18 @@ function jobPricing(e) {
 
     console.log('price', jobPrice);
 
-    const find = discountCode.includes(discount);
+    let find = discountCode.includes(discount);
+    
     let priceDiscount = 0;
 
     console.log(find);
     if (find) {
         jobPrice = jobPrice - (jobPrice * discountSale);
+    } else if (discount == '')  { 
+        
+    } else if (!find) {
+        alert('Il codice inserito non è valido');
+
     }
     console.log(priceDiscount);
 
