@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark px-4 " data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="#">Bool factory</a>
+                <a class="navbar-brand fw-bold" href="./index.html">Bool factory</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,21 +48,21 @@
                     </section>
                     <form id="form" class="needs-validation">
                         <div class="mb-3">
-                            <label for="name" class="form-label fw-bold">Nome</label>
+                            <label id="name-input" class="form-label fw-bold">Nome</label>
                             <input id="name" type="text" class="form-control" placeholder="Inserisci nome :" required>
                         </div>
                         <div class="mb-3">
-                            <label for="last-name" class="form-label fw-bold">Cognome</label>
+                            <label id="last-name-input" class="form-label fw-bold">Cognome</label>
                             <input type="text" class="form-control " placeholder="Inserisci cognome :" required>
                         </div>
                         <div class="mb-3">
-                            <label for="mail" class="form-label fw-bold">Email</label>
+                            <label id="mail-input"  class="form-label form-control fw-bold">Email</label>
                             <input type="email" class="form-control " placeholder="Inserisci email :" required>
                         </div>
-                        <label for="mail" class="form-label fw-bold">Tipo di lavoro</label>
+                        <label id="job-selector"  class="form-label form-control fw-bold">Tipo di lavoro</label>
                         <select id="job-selection" class="form-select form-select-sm" aria-label="Small select example"
-                            required>
-                            <option id="job-selection" selected>Seleziona il tipo di lavoro</option>
+                            required >
+                            <option value="" label="Seleziona il tipo di lavoro"></option>
                             <option value="backend">Backend Development</option>
                             <option value="frontend">Frontend Development</option>
                             <option value="project">Project Analysis</option>
@@ -72,31 +72,31 @@
                                 rows="3"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="discount-code" class="form-label fw-bold">Codice promozionale (opzionale)
+                            <label  class="form-label fw-bold">Codice promozionale (opzionale)
                             </label>
                             <input id="discount" type="text" class="form-control " placeholder=" Inserisci codice :">
                         </div>
                         <div class="mb-3">
                             <input class="form-check-input mt-1 border border-primary" type="checkbox" value=""
-                                aria-label="Checkbox" required>  Accetto la Privacy Policy
+                                aria-label="Checkbox" required> Accetto la Privacy Policy
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="py-4 mb-3 ">
                                         <button type="submit" class="btn btn-primary">Calcola preventivo</button>
-                                        <section class="mx-5 px-5">
+
                                     </div>
                                 </div>
                                 <div class="col-lg-6 py-4">
                                     <h4 class="fw-bold fw-2">Prezzo finale</h4>
-                                    <span id="price-bold" class="fw-bold fs-2">
-                                
+                                    <span id="price-bold" class="fw-bold fs-2 text-secondary">
+
                                     </span>
                                     <span id="price-normal">
-                                
+
                                     </span>
-                                    </section>
+
                                 </div>
                             </div>
                         </div>
