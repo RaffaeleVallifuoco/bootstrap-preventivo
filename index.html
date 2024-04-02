@@ -13,13 +13,13 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark px-4 " data-bs-theme="dark">
-            <div class="container-fluid">
+            <div class="container">
                 <a class="navbar-brand fw-bold" href="./index.html">Bool factory</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-flex justify-content-between">
+                <span class="">
                     <div class="collapse navbar-collapse " id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
@@ -33,10 +33,11 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </span>
             </div>
         </nav>
     </header>
+
     <main>
         <div class="container">
             <div class="row">
@@ -56,10 +57,10 @@
                             <input type="text" class="form-control " placeholder="Inserisci cognome :" required>
                         </div>
                         <div class="mb-3">
-                            <label id="mail-input"  class="form-label form-control fw-bold">Email</label>
+                            <label id="mail-input"  class="form-label fw-bold">Email</label>
                             <input type="email" class="form-control " placeholder="Inserisci email :" required>
                         </div>
-                        <label id="job-selector"  class="form-label form-control fw-bold">Tipo di lavoro</label>
+                        <label id="job-selector"  class="form-label fw-bold">Tipo di lavoro</label>
                         <select id="job-selection" class="form-select form-select-sm" aria-label="Small select example"
                             required >
                             <option value="" label="Seleziona il tipo di lavoro"></option>
@@ -91,10 +92,10 @@
                                 <div class="col-lg-6 py-4">
                                     <h4 class="fw-bold fw-2">Prezzo finale</h4>
                                     <span id="price-bold" class="fw-bold fs-2 text-secondary">
-
+                                        € - ,
                                     </span>
                                     <span id="price-normal">
-
+                                        --
                                     </span>
 
                                 </div>
@@ -123,10 +124,11 @@
             </div>
         </div>
     </main>
+
     <footer class="bg-dark mt-auto py-3  text-center " data-bs-theme="dark">
         <span class="col-md-4  text-body-secondary fw-bold ">© 2024 Raffaele Vallifuoco - Tutti i diritti
             riservati</span>
-       <a href="https://github.com/"><img src="./img/github-icon-2048x2048-eyd5tyuo.png" alt="gitLogo" width="50 px"></a>
+       <a class="px-4" href="https://github.com/"><img src="./img/github-icon-2048x2048-eyd5tyuo.png" alt="gitLogo" width="50 px"></a>
     </footer>
     <script src="./Js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
