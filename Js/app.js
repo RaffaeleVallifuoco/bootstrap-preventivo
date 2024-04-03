@@ -9,10 +9,23 @@ const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 const discountSale = 0.25;
-formElement.addEventListener('submit', jobPricing);
 
-function jobPricing(e) {
-    e.preventDefault()
+(() => {
+    const forms = document.querySelectorAll('.needs-validation')
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+            jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
+        }, false)
+    })
+})()
+
+function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode) {
+    
     let discount = discountElement.value;
     const selectedJob = jobSelectionElement.value;
     let jobPrice = 0;
@@ -30,16 +43,14 @@ function jobPricing(e) {
     if (find) {
         jobPrice = jobPrice - (jobPrice * discountSale);
     } else if (discount == '') {
-
+        
     } else if (!find) {
         alert('Il codice inserito non è valido');
-
+        
     }
 
     const estimatePrice = Intl.NumberFormat('en-DE', { style: 'currency', currency: 'EUR' }).format(projectHours * jobPrice);
     let price = estimatePrice.split('.');
     priceBoldElement.innerHTML = price[0];
     priceNormalElement.innerHTML = (',' + price[1]);
-
 }
-

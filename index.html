@@ -12,28 +12,26 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark px-4 " data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="./index.html">Bool factory</a>
+                <a class="navbar-brand" href="#">Bool factory</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <span class="">
-                    <div class="collapse navbar-collapse " id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Servizi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contatti</a>
-                            </li>
-                        </ul>
-                    </div>
-                </span>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servizi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -47,47 +45,60 @@
                         <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo
                         </p>
                     </section>
-                    <form id="form" class="needs-validation">
-                        <div class="mb-3">
-                            <label id="name-input" class="form-label fw-bold">Nome</label>
-                            <input id="name" type="text" class="form-control" placeholder="Inserisci nome :" required>
-                        </div>
-                        <div class="mb-3">
-                            <label id="last-name-input" class="form-label fw-bold">Cognome</label>
-                            <input type="text" class="form-control " placeholder="Inserisci cognome :" required>
-                        </div>
-                        <div class="mb-3">
-                            <label id="mail-input"  class="form-label fw-bold">Email</label>
-                            <input type="email" class="form-control " placeholder="Inserisci email :" required>
-                        </div>
-                        <label id="job-selector"  class="form-label fw-bold">Tipo di lavoro</label>
-                        <select id="job-selection" class="form-select form-select-sm" aria-label="Small select example"
-                            required >
-                            <option value="" label="Seleziona il tipo di lavoro"></option>
-                            <option value="backend">Backend Development</option>
-                            <option value="frontend">Frontend Development</option>
-                            <option value="project">Project Analysis</option>
-                        </select>
-                        <div class="mb-3">
-                            <textarea class="form-control my-3" placeholder="Note :" id="exampleFormControlTextarea1"
-                                rows="3"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label  class="form-label fw-bold">Codice promozionale (opzionale)
-                            </label>
-                            <input id="discount" type="text" class="form-control " placeholder=" Inserisci codice :">
-                        </div>
-                        <div class="mb-3">
-                            <input class="form-check-input mt-1 border border-primary" type="checkbox" value=""
-                                aria-label="Checkbox" required> Accetto la Privacy Policy
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="py-4 mb-3 ">
-                                        <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                    <div>
+                        <form id="form" class="needs-validation" novalidate>
+                            <label class="form-label fw-bold py-2">Nome</label>
+                            <input type="text" class="form-control py-2" placeholder="Inserisci il tuo nome" id="name"
+                                required>
+                            <div class="invalid-feedback">
+                                Campo Obbligatorio
+                            </div>
+                            <label class="form-label fw-bold py-2 ">Cognome</label>
+                            <input type="text" class="form-control py-2" placeholder="Inserisci il tuo cognome" id="last-name"
+                                required>
+                            <div class="invalid-feedback">
+                                Campo Obbligatorio
+                            </div>
+                            <label class="form-label fw-bold py-2 ">Email</label>
+                            <input type="email" class="form-control py-2" placeholder="Inserisci una email valida" id="email"
+                                required>
+                            <div class="invalid-feedback">
+                                Email non valida
+                            </div>
+                            <label class="form-label py-2 fw-bold">Seleziona il tipo di lavoro richiesto</label>
+                            <select id="job-selection" class="form-select py-2" required>
+                                <option value="" label="Seleziona il tipo di lavoro"></option>
+                                <option value="backend">Backend Development</option>
+                                <option value="frontend">Frontend Development</option>
+                                <option value="project">Project Analysis</option>
 
-                                    </div>
+                            </select>
+                            <div class="invalid-feedback">
+                                Seleziona un opzione
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control my-3" placeholder="Note :"
+                                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div id="discount-div" class="mb-3">
+                                <label class="form-label fw-bold">Codice promozionale (opzionale)
+                                </label>
+                                <input id="discount" type="text" class="form-control" placeholder=" Inserisci codice :">
+                            </div>
+
+                            <div class="form-check py-3">
+                                <input class="form-check-input  " type="checkbox" value="" required>
+                                <label class="form-check-label ">
+                                    Accetto la Privacy Policy
+                                </label>
+                                <div class="invalid-feedback">
+                                    Devi accettare prima di procedere
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 py-4">
+                                    <button class="btn btn-primary py-3 " type="submit">Calcola Preventivo</button>
                                 </div>
                                 <div class="col-lg-6 py-4">
                                     <h4 class="fw-bold fw-2">Prezzo finale</h4>
@@ -100,8 +111,9 @@
 
                                 </div>
                             </div>
-                        </div>
-                    </form>
+
+                        </form>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card my-5" style="width: 18rem;">
@@ -125,10 +137,11 @@
         </div>
     </main>
 
-    <footer class="bg-dark mt-auto py-3  text-center " data-bs-theme="dark">
+    <footer class="bg-dark mt-auto py-3  text-center  " data-bs-theme="dark">
         <span class="col-md-4  text-body-secondary fw-bold ">© 2024 Raffaele Vallifuoco - Tutti i diritti
             riservati</span>
-       <a class="px-4" href="https://github.com/"><img src="./img/github-icon-2048x2048-eyd5tyuo.png" alt="gitLogo" width="50 px"></a>
+        <a class="px-4" href="https://github.com/"><img src="./img/github-icon-2048x2048-eyd5tyuo.png" alt="gitLogo"
+                width="50"></a>
     </footer>
     <script src="./Js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
