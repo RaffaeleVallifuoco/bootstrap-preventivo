@@ -39,7 +39,6 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
 
     let priceDiscount = 0;
     let find = discountCode.includes(discount);
-    console.log(find);
     if (find) {
         jobPrice = jobPrice - (jobPrice * discountSale);
     } else if (discount == '') {

@@ -1,5 +1,5 @@
 
 .form-control.no-validation, .was-validated .form-control:valid {
-    border-color: grey;
-        background-image: none;
+    border-color: none;
+    background-image: none;
 }
