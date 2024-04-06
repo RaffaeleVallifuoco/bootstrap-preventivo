@@ -23,13 +23,11 @@ const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
         form.addEventListener('submit', event => {
             event.preventDefault();
             if (!form.checkValidity()) {
-                event.stopPropagation();
-                
+                event.stopPropagation();    
             } else {
                 jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
             }
-            form.classList.add('was-validated');
-            
+            form.classList.add('was-validated');        
         }, false)
     })
 })()
