@@ -24,9 +24,12 @@ const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
             event.preventDefault();
             if (!form.checkValidity()) {
                 event.stopPropagation();
+                
+            } else {
+                jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
             }
             form.classList.add('was-validated');
-            jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
+            
         }, false)
     })
 })()
