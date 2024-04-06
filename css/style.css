@@ -1,5 +1,9 @@
-
 .form-control.no-validation, .was-validated .form-control:valid {
     border-color: none;
     background-image: none;
+}
+
+
+.invalid-feedback-pers {
+    color: red;
 }
