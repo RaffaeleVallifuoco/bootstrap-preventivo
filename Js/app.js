@@ -62,6 +62,7 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
 
     } else if (!find) {
         discountElement.setAttribute('style', 'color:red; border-color:red;');
+        discountElement.style.backgroundImage = "url('./img/alert_round.png')";
         invalidMessageElement.innerHTML = ('Il codice selezionato non è valido')
     }
 
