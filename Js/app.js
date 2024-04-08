@@ -11,8 +11,9 @@ const priceBoldElement = document.getElementById('price-bold');
 const priceNormalElement = document.getElementById('price-normal');
 const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
-const invalidMessageElement = document.getElementById('invalid-message');
-const validMessageElement = document.getElementById('valid-message');
+const feedbackMessageElement = document.getElementById('feedback-message');
+const feedbackElement = document.getElementById ('feedback');
+
 const discountSale = 0.25;
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
@@ -56,15 +57,18 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     let find = discountCode.includes(discount);
     if (find) {
         discountElement.setAttribute('style', 'color:green; border-color:green;');
-        validMessageElement.innerHTML = ('Codice valido')
+        feedbackMessageElement.setAttribute('style', 'color:green;')
+        discountElement.style.backgroundImage = "url('./img/check.jpg')";
+        feedbackMessageElement.innerHTML = ('Codice valido')
         jobPrice = jobPrice - (jobPrice * discountSale);
 
     } else if (discount == '') {
 
     } else if (!find) {
         discountElement.setAttribute('style', 'color:red; border-color:red;');
+        feedbackMessageElement.setAttribute ('style', 'color:red;' )
         discountElement.style.backgroundImage = "url('./img/alert_round.png')";
-        invalidMessageElement.innerHTML = ('Il codice selezionato non è valido')
+        feedbackMessageElement.innerHTML = ('Il codice selezionato non è valido')
     }
 
     //console.log('prezzo : ', jobPrice);
