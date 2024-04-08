@@ -17,20 +17,19 @@ const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
 // main validation functiom
 
-(() => {
-    const forms = document.querySelectorAll('.needs-validation')
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            event.preventDefault();
-            if (!form.checkValidity()) {
-                event.stopPropagation();    
-            } else {
-                jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
-            }
-            form.classList.add('was-validated');        
-        }, false)
-    })
-})()
+const forms = document.querySelectorAll('.needs-validation')
+Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+        } else {
+            jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
+        }
+        form.classList.add('was-validated');
+    }, false)
+})
+
 
 // job price calculator 
 
