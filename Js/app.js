@@ -53,7 +53,6 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
         jobPrice = ProjectAnalysisHourPrice;
     }
 
-    let priceDiscount = 0;
     let find = discountCode.includes(discount);
     if (find) {
         discountElement.setAttribute('style', 'color:green; border-color:green;');
@@ -64,7 +63,6 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     } else if (!find) {
         discountElement.setAttribute('style', 'color:red; border-color:red;');
         invalidMessageElement.innerHTML = ('Il codice selezionato non è valido')
-
     }
 
     //console.log('prezzo : ', jobPrice);
