@@ -12,6 +12,7 @@ const priceNormalElement = document.getElementById('price-normal');
 const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
 const invalidMessageElement = document.getElementById('invalid-message');
+const validMessageElement = document.getElementById('valid-message');
 const discountSale = 0.25;
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
@@ -55,6 +56,7 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     let find = discountCode.includes(discount);
     if (find) {
         discountElement.setAttribute('style', 'color:green; border-color:green;');
+        validMessageElement.innerHTML = ('Codice valido')
         jobPrice = jobPrice - (jobPrice * discountSale);
 
     } else if (discount == '') {
