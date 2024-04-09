@@ -78,14 +78,14 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
 // Personal validation feedback
 
 function validFeedback (domOuterElement , domInnerElement) {
-    domOuterElement.setAttribute('style', 'color:green; border-color:green;');
+    domOuterElement.setAttribute('style', 'color:green; border-color:green;border-shadow:none;');
     domOuterElement.style.backgroundImage = "url('./img/check.png')";
     domInnerElement.setAttribute('style', 'color:green;');
     domInnerElement.innerHTML = ('Codice valido');
 }
 
 function invalidFeeback (domOuterElement , domInnerElement) {
-    domOuterElement.setAttribute('style', 'color:red; border-color:red;');
+    domOuterElement.setAttribute('style', 'color:red; border-color:red; border-shadow:none;');
     domOuterElement.style.backgroundImage = "url('./img/alert_round.png')";
     domInnerElement.setAttribute('style', 'color:red;');
     domInnerElement.innerHTML = ('Il codice selezionato non è valido');
