@@ -13,7 +13,6 @@ const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
 const feedbackMessageElement = document.getElementById('feedback-message');
 const feedbackElement = document.getElementById ('feedback');
-
 const discountSale = 0.25;
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
@@ -56,19 +55,13 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
 
     let find = discountCode.includes(discount);
     if (find) {
-        discountElement.setAttribute('style', 'color:green; border-color:green;');
-        feedbackMessageElement.setAttribute('style', 'color:green;')
-        discountElement.style.backgroundImage = "url('./img/check.jpg')";
-        feedbackMessageElement.innerHTML = ('Codice valido')
+        validFeedback (discountElement , feedbackMessageElement);
         jobPrice = jobPrice - (jobPrice * discountSale);
 
     } else if (discount == '') {
 
     } else if (!find) {
-        discountElement.setAttribute('style', 'color:red; border-color:red;');
-        feedbackMessageElement.setAttribute ('style', 'color:red;' )
-        discountElement.style.backgroundImage = "url('./img/alert_round.png')";
-        feedbackMessageElement.innerHTML = ('Il codice selezionato non è valido')
+        invalidFeeback (discountElement , feedbackMessageElement);
     }
 
     //console.log('prezzo : ', jobPrice);
@@ -78,4 +71,20 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     //console.log('prezzo : ' , price);
     priceBoldElement.innerHTML = price[0];
     priceNormalElement.innerHTML = (',' + price[1]);
+}
+
+// Personal validation feedback
+
+function validFeedback (domOuterElement , domInnerElement) {
+    domOuterElement.setAttribute('style', 'color:green; border-color:green;');
+    domOuterElement.style.backgroundImage = "url('./img/check.png')";
+    domInnerElement.setAttribute('style', 'color:green;')
+    domInnerElement.innerHTML = ('Codice valido')
+}
+
+function invalidFeeback (domOuterElement , domInnerElement) {
+    domOuterElement.setAttribute('style', 'color:red; border-color:red;');
+    domOuterElement.style.backgroundImage = "url('./img/alert_round.png')";
+    domInnerElement.setAttribute('style', 'color:red;')
+    domInnerElement.innerHTML = ('Il codice selezionato non è valido')
 }
