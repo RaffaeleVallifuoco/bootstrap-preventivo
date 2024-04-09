@@ -15,6 +15,7 @@ const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
 const feedbackMessageElement = document.getElementById('feedback-message');
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
+const discountSale = 0.25;
 
 // main validation functiom
 
@@ -59,6 +60,7 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
         jobPrice = jobPrice - (jobPrice * discountSale);
 
     } else if (discount == '') {
+        resetFeedback (discountElement, feedbackMessageElement);
 
     } else if (!find) {
         invalidFeeback (discountElement , feedbackMessageElement);
@@ -78,13 +80,20 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
 function validFeedback (domOuterElement , domInnerElement) {
     domOuterElement.setAttribute('style', 'color:green; border-color:green;');
     domOuterElement.style.backgroundImage = "url('./img/check.png')";
-    domInnerElement.setAttribute('style', 'color:green;')
-    domInnerElement.innerHTML = ('Codice valido')
+    domInnerElement.setAttribute('style', 'color:green;');
+    domInnerElement.innerHTML = ('Codice valido');
 }
 
 function invalidFeeback (domOuterElement , domInnerElement) {
     domOuterElement.setAttribute('style', 'color:red; border-color:red;');
     domOuterElement.style.backgroundImage = "url('./img/alert_round.png')";
-    domInnerElement.setAttribute('style', 'color:red;')
-    domInnerElement.innerHTML = ('Il codice selezionato non è valido')
+    domInnerElement.setAttribute('style', 'color:red;');
+    domInnerElement.innerHTML = ('Il codice selezionato non è valido');
+}
+
+function resetFeedback(domOuterElement , domInnerElement) {
+    domOuterElement.setAttribute('style', 'color:black; border-color:grey;');
+    domOuterElement.style.backgroundImage = "none";
+    domInnerElement.innerHTML = ('');
+
 }
