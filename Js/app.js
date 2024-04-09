@@ -2,18 +2,18 @@
 
 // global var
 
-const projectHours = 10;
-const backEndHourPrice = 20.50;
-const frontEndHourPrice = 15.30;
-const ProjectAnalysisHourPrice = 33.60;
+const jobs = {
+    projectHours : '10',
+    backEndHourPrice : '20.50',
+    frontEndHourPrice : '15.30',
+    projectAnalysisHourPrice : '33.60'
+};
 const formElement = document.getElementById('form');
 const priceBoldElement = document.getElementById('price-bold');
 const priceNormalElement = document.getElementById('price-normal');
 const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
 const feedbackMessageElement = document.getElementById('feedback-message');
-const feedbackElement = document.getElementById ('feedback');
-const discountSale = 0.25;
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
 // main validation functiom
@@ -25,7 +25,7 @@ Array.from(forms).forEach(form => {
         if (!form.checkValidity()) {
             event.stopPropagation();
         } else {
-            jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode);
+            jobPricing(discountElement, jobSelectionElement, jobs.backEndHourPrice, jobs.frontEndHourPrice, jobs.projectAnalysisHourPrice, discountCode, jobs.projectHours);
         }
         form.classList.add('was-validated');
     }, false)
@@ -34,7 +34,7 @@ Array.from(forms).forEach(form => {
 
 // job price calculator 
 
-function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, ProjectAnalysisHourPrice, discountCode) {
+function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, frontEndHourPrice, projectAnalysisHourPrice, discountCode, projectHours) {
 
     let discount = discountElement.value;
 
@@ -50,7 +50,7 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     } else if (selectedJob === 'frontend') {
         jobPrice = frontEndHourPrice;
     } else if (selectedJob === 'project') {
-        jobPrice = ProjectAnalysisHourPrice;
+        jobPrice = projectAnalysisHourPrice;
     }
 
     let find = discountCode.includes(discount);
