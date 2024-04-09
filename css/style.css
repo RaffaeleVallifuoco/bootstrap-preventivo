@@ -1,8 +1,10 @@
+body {
+    height: 100 vh;
+}
 .form-control.no-validation, .was-validated .form-control:valid {
     border-color: none;
     background-image: none;
 }
-
 
 
 
