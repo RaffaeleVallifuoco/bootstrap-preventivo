@@ -14,6 +14,7 @@ const priceNormalElement = document.getElementById('price-normal');
 const jobSelectionElement = document.getElementById('job-selection');
 const discountElement = document.getElementById('discount');
 const feedbackMessageElement = document.getElementById('feedback-message');
+const bannedPriceElement = document.getElementById('banned-price');
 const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 const discountSale = 0.25;
 
@@ -57,13 +58,17 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     let find = discountCode.includes(discount);
     if (find) {
         validFeedback (discountElement , feedbackMessageElement);
+        const bannedPrice = Intl.NumberFormat('en-DE', { style: 'currency', currency: 'EUR' }).format(jobPrice * projectHours);
+        bannedPriceElement.innerHTML = ('EUR' , bannedPrice);
         jobPrice = jobPrice - (jobPrice * discountSale);
 
     } else if (discount == '') {
         resetFeedback (discountElement, feedbackMessageElement);
+        bannedPriceElement.innerHTML = ('');
 
     } else if (!find) {
         invalidFeeback (discountElement , feedbackMessageElement);
+        bannedPriceElement.innerHTML = ('');
     }
 
     //console.log('prezzo : ', jobPrice);
@@ -74,6 +79,10 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
     priceBoldElement.innerHTML = price[0];
     priceNormalElement.innerHTML = (',' + price[1]);
 }
+
+
+
+
 
 // Personal validation feedback
 
