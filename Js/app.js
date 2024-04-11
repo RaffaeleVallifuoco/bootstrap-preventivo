@@ -60,15 +60,18 @@ function jobPricing(discountElement, jobSelectionElement, backEndHourPrice, fron
         validFeedback (discountElement , feedbackMessageElement);
         const bannedPrice = Intl.NumberFormat('en-DE', { style: 'currency', currency: 'EUR' }).format(jobPrice * projectHours);
         bannedPriceElement.innerHTML = ('EUR' , bannedPrice);
+        bannedPriceElement.classList.add('px-3');
         jobPrice = jobPrice - (jobPrice * discountSale);
 
     } else if (discount == '') {
         resetFeedback (discountElement, feedbackMessageElement);
         bannedPriceElement.innerHTML = ('');
+        bannedPriceElement.classList.remove('px-3');
 
     } else if (!find) {
         invalidFeeback (discountElement , feedbackMessageElement);
         bannedPriceElement.innerHTML = ('');
+        bannedPriceElement.classList.remove('px-3');
     }
 
     //console.log('prezzo : ', jobPrice);
